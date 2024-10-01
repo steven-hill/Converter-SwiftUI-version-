@@ -6,10 +6,25 @@
 //
 
 import XCTest
+@testable import Converter_SwiftUIVersion
 
 final class ViewModelTests: XCTestCase {
 
-    func test_initialFailingTest() {
-        XCTFail("Initial failing test.")
+    var sut: ViewModel!
+    
+    override func setUp() {
+        sut = ViewModel()
+    }
+    
+    override func tearDown() {
+        sut = nil
+    }
+    
+    func test_viewModelDefaultValues_areSetCorrectlyAtInitialisation() {
+        XCTAssertEqual(sut.selectedUnitTypeIndex, 0, "Should be set to 0.")
+        XCTAssertEqual(sut.selectedFromUnitIndex, 0, "Should be set to 0.")
+        XCTAssertEqual(sut.selectedToUnitIndex, 1, "Should be set to 1.")
+        XCTAssertEqual(sut.inputAmount, "", "Should be set to an empty string.")
+        XCTAssertEqual(sut.result, "", "Should be set to an empty string.")
     }
 }
