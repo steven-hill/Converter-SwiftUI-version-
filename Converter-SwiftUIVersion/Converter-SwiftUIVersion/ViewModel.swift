@@ -13,4 +13,9 @@ class ViewModel: ObservableObject {
     @Published var selectedToUnitIndex = 1
     @Published var inputAmount = ""
     @Published var result = ""
+    
+    func resetUnitSelection() {
+        selectedFromUnitIndex = 0
+        selectedToUnitIndex = 1
+    }
 }
