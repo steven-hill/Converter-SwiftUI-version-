@@ -37,4 +37,12 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedFromUnitIndex, 0, "Should be reset to 0.")
         XCTAssertEqual(sut.selectedToUnitIndex, 1, "Should be reset to 1.")
     }
+    
+    func test_inputAmount_isAnEmptyString_castToDefaultDoubleValueinUpdateResultFunction() {
+        let input = Double(sut.inputAmount) ?? 0.0
+        
+        sut.updateResult()
+        
+        XCTAssertEqual(input, 0.0, "Should be set to 0.0.")
+    }
 }

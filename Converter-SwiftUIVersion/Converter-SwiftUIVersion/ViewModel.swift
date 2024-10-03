@@ -18,4 +18,8 @@ class ViewModel: ObservableObject {
         selectedFromUnitIndex = 0
         selectedToUnitIndex = 1
     }
+    
+    func updateResult() {
+        let _ = Double(inputAmount) ?? 0.0
+    }
 }
