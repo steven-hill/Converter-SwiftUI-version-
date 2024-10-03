@@ -20,6 +20,7 @@ class ViewModel: ObservableObject {
     }
     
     func updateResult() {
-        let _ = Double(inputAmount) ?? 0.0
+        let input = Double(inputAmount) ?? 0.0
+        result = String(input)
     }
 }
