@@ -43,4 +43,30 @@ final class ViewModelTests: XCTestCase {
         
         XCTAssertEqual(sut.result, "0.0", "The result should be 0.0.")
     }
+    
+    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsAPeriod() {
+        sut.inputAmount = "."
+        
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "0.0", "Should be set to 0.0.")
+    }
+    
+    //  input = ".0"
+    
+    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsANumberAndAPeriod() {
+        sut.inputAmount = "0."
+        
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "0.0", "Should be set to 0.0.")
+    }
+    
+    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsAPeriodAndANumber() {
+        sut.inputAmount = ".0"
+        
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "0.0", "Should be set to 0.0.")
+    }
 }
