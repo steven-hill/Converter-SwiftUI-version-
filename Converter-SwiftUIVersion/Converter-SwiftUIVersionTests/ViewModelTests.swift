@@ -38,35 +38,33 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedToUnitIndex, 1, "Should be reset to 1.")
     }
     
-    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsAnEmptyString() {
+    func test_updateResult_convertsInputAmountToResult_usingViewModelDefaultValues() {
         sut.updateResult()
         
-        XCTAssertEqual(sut.result, "0.0", "The result should be 0.0.")
+        XCTAssertEqual(sut.result, "0 au = 0 cm", "Result should be 0 au = 0 cm when view model's default values are used and input amount is an empty string.")
     }
     
-    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsAPeriod() {
+    func test_updateResult_convertsInputAmountToResult_whenInputAmountIsAPeriod() {
         sut.inputAmount = "."
         
         sut.updateResult()
         
-        XCTAssertEqual(sut.result, "0.0", "Should be set to 0.0.")
+        XCTAssertEqual(sut.result, "0 au = 0 cm", "The result should be 0 au = 0 cm.")
     }
-    
-    //  input = ".0"
-    
-    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsANumberAndAPeriod() {
+        
+    func test_updateResult_convertsInputAmountToResult_whenInputAmountIsANumberAndAPeriod() {
         sut.inputAmount = "0."
         
         sut.updateResult()
         
-        XCTAssertEqual(sut.result, "0.0", "Should be set to 0.0.")
+        XCTAssertEqual(sut.result, "0 au = 0 cm", "The result should be 0 au = 0 cm.")
     }
     
-    func test_updateResult_assignsDefaultDoubleValueToInputAmountAndUpdatesResult_whenInputAmountIsAPeriodAndANumber() {
+    func test_updateResult_convertsInputAmountToResult_whenInputAmountIsAPeriodAndANumber() {
         sut.inputAmount = ".0"
         
         sut.updateResult()
         
-        XCTAssertEqual(sut.result, "0.0", "Should be set to 0.0.")
+        XCTAssertEqual(sut.result, "0 au = 0 cm", "The result should be 0 au = 0 cm.")
     }
 }
