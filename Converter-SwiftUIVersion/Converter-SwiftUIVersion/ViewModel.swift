@@ -21,6 +21,16 @@ class ViewModel: ObservableObject {
     
     func updateResult() {
         let input = Double(inputAmount) ?? 0.0
-        result = String(input)
+        
+        let from = ConverterConversions().conversions[selectedUnitTypeIndex].units[selectedFromUnitIndex]
+
+        let to = ConverterConversions().conversions[selectedUnitTypeIndex].units[selectedToUnitIndex]
+        
+        let inputMeasurement = Measurement(value: input, unit: from)
+        let output = inputMeasurement.converted(to: to)
+        
+        let formatter = MeasurementFormatter()
+        formatter.unitOptions = .providedUnit
+        result = formatter.string(from: inputMeasurement) + " = " + formatter.string(from: output)
     }
 }
