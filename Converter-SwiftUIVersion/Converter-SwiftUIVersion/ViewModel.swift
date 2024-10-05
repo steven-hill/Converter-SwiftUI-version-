@@ -14,6 +14,10 @@ class ViewModel: ObservableObject {
     @Published var inputAmount = ""
     @Published var result = ""
     
+    var currentUnits: [Dimension] {
+        ConverterConversions().conversions[selectedUnitTypeIndex].units
+    }
+    
     func resetUnitSelection() {
         selectedFromUnitIndex = 0
         selectedToUnitIndex = 1
@@ -21,10 +25,8 @@ class ViewModel: ObservableObject {
     
     func updateResult() {
         let input = Double(inputAmount) ?? 0.0
-        
-        let from = ConverterConversions().conversions[selectedUnitTypeIndex].units[selectedFromUnitIndex]
-
-        let to = ConverterConversions().conversions[selectedUnitTypeIndex].units[selectedToUnitIndex]
+        let from = currentUnits[selectedFromUnitIndex]
+        let to = currentUnits[selectedToUnitIndex]
         
         let inputMeasurement = Measurement(value: input, unit: from)
         let output = inputMeasurement.converted(to: to)
