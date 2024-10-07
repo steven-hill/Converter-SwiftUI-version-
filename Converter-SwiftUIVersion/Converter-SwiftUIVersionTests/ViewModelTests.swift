@@ -77,7 +77,7 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.result, "5 mi = 8.047 km", "Result should be that 5 miles is equal to 8.047 kilometers.")
     }
     
-    func test_conversionCalculationForSecondsToHours_isCorrect() {
+    func test_conversionCalculationForHoursToSeconds_isCorrect() {
         sut.selectedUnitTypeIndex = 1
         sut.selectedFromUnitIndex = 0
         sut.selectedToUnitIndex = 2
@@ -107,7 +107,7 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.result, "100°F = 37.778°C", "Result should be that 100 degrees Fahrenheit is equal to 37.778 degrees Celsius.")
     }
     
-    func test_conversionCalculationForLitersToMilliliters_isCorrect() {
+    func test_conversionCalculationForMillilitersToLiters_isCorrect() {
         sut.selectedUnitTypeIndex = 4
         sut.selectedFromUnitIndex = 6
         sut.selectedToUnitIndex = 5
