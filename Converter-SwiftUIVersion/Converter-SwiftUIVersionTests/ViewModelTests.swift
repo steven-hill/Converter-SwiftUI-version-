@@ -67,4 +67,53 @@ final class ViewModelTests: XCTestCase {
         
         XCTAssertEqual(sut.result, "0 au = 0 cm", "The result should be 0 au = 0 cm.")
     }
+    
+    func test_conversionCalculationForMilesToKilometers_isCorrect() {
+        sut.selectedFromUnitIndex = 7
+        sut.selectedToUnitIndex = 4
+        sut.inputAmount = "5"
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "5 mi = 8.047 km", "Result should be that 5 miles is equal to 8.047 kilometers.")
+    }
+    
+    func test_conversionCalculationForSecondsToHours_isCorrect() {
+        sut.selectedUnitTypeIndex = 1
+        sut.selectedFromUnitIndex = 0
+        sut.selectedToUnitIndex = 2
+        sut.inputAmount = "1"
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "1 hr = 3,600 secs", "Result should be that 1 hour is equal to 3600 seconds.")
+    }
+    
+    func test_conversionCalculationForGramsToKilograms_isCorrect() {
+        sut.selectedUnitTypeIndex = 2
+        sut.selectedFromUnitIndex = 0
+        sut.selectedToUnitIndex = 1
+        sut.inputAmount = "1000"
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "1,000 g = 1 kg", "Result should be that 1000 grams is equal to 1 kilogram.")
+    }
+    
+    func test_conversionCalculationForFahrenheitToCelsius_isCorrect() {
+        sut.selectedUnitTypeIndex = 3
+        sut.selectedFromUnitIndex = 1
+        sut.selectedToUnitIndex = 0
+        sut.inputAmount = "100"
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "100°F = 37.778°C", "Result should be that 100 degrees Fahrenheit is equal to 37.778 degrees Celsius.")
+    }
+    
+    func test_conversionCalculationForLitersToMilliliters_isCorrect() {
+        sut.selectedUnitTypeIndex = 4
+        sut.selectedFromUnitIndex = 6
+        sut.selectedToUnitIndex = 5
+        sut.inputAmount = "1000"
+        sut.updateResult()
+        
+        XCTAssertEqual(sut.result, "1,000 ml = 1 l", "Result should be that 1000 milliliters is equal to 1 liter.")
+    }
 }
