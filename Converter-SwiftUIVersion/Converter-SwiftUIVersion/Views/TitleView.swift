@@ -11,5 +11,6 @@ struct TitleView: View {
         Text("Measurement converter")
             .foregroundStyle(.white)
             .font(.largeTitle)
+            .accessibilityIdentifier("TitleView text")
     }
 }
