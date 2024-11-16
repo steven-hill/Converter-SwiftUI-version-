@@ -20,7 +20,7 @@ final class Converter_SwiftUIVersionUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let titleViewText = app.staticTexts["Measurement converter"]
+        let titleViewText = app.staticTexts["TitleView text"]
 
         XCTAssertTrue(titleViewText.exists, "The title text should exist.")
         XCTAssertEqual(titleViewText.label, "Measurement converter", "The title text should be 'Measurement converter'.")
