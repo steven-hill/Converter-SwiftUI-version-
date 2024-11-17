@@ -20,5 +20,5 @@ struct BackgroundView: View {
 }
 
 #Preview {
-    ContentView()
+    BackgroundView()
 }
