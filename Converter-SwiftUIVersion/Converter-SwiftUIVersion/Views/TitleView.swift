@@ -14,3 +14,7 @@ struct TitleView: View {
             .accessibilityIdentifier("TitleView text")
     }
 }
+
+#Preview {
+    TitleView()
+}
