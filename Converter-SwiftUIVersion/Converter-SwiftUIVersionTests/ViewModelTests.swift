@@ -28,6 +28,14 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.result, "", "Should be set to an empty string.")
     }
     
+    func test_selectedUnitTypeIndex_changesCorrectly() {
+        sut.selectedUnitTypeIndex = 0
+        sut.selectedUnitTypeIndex = 1
+        
+        XCTAssertEqual(sut.selectedUnitTypeIndex, 1)
+        XCTAssertEqual(sut.currentUnits, ConverterConversions.init().conversions[1].units, "Both values should be the hours, minutes and seconds units of the Duration array.")
+    }
+    
     func test_unitSelectionResetFunction_resetsUnitIndexesToInitialValues() {
         sut.selectedFromUnitIndex = 2
         sut.selectedToUnitIndex = 2
