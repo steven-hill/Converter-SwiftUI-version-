@@ -17,6 +17,12 @@ struct ContentView: View {
                 TitleView()
                 VStack {
                     UnitTypePicker(viewModel: viewModel)
+                    HStack {
+                        UnitSelectionView(title: "Convert from")
+                            .accessibilityIdentifier("Convert from unit selection view")
+                        UnitSelectionView(title: "Convert to")
+                            .accessibilityIdentifier("Convert to unit selection view")
+                    }
                 }
             }
         }
