@@ -17,6 +17,9 @@ struct UnitTypePicker: View {
             }
         }
         .pickerStyle(.segmented)
+        .onChange(of: viewModel.selectedUnitTypeIndex) {
+            viewModel.resetUnitSelection()
+        }
         .accessibilityIdentifier("Unit type picker")
     }
 }
