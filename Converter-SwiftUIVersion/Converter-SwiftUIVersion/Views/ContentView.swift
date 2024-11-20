@@ -18,9 +18,9 @@ struct ContentView: View {
                 VStack {
                     UnitTypePicker(viewModel: viewModel)
                     HStack {
-                        UnitSelectionView(title: "Convert from")
+                        UnitSelectionView(title: "Convert from", selectedIndex: $viewModel.selectedFromUnitIndex, units: viewModel.currentUnits)
                             .accessibilityIdentifier("Convert from unit selection view")
-                        UnitSelectionView(title: "Convert to")
+                        UnitSelectionView(title: "Convert to", selectedIndex: $viewModel.selectedToUnitIndex, units: viewModel.currentUnits)
                             .accessibilityIdentifier("Convert to unit selection view")
                     }
                 }

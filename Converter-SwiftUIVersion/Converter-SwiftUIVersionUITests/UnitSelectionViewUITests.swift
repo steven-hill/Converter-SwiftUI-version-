@@ -36,4 +36,9 @@ final class UnitSelectionViewUITests: XCTestCase {
         XCTAssertTrue(convertToUnitSelectionView.exists, "The convert to unit selection view should exist.")
         XCTAssertEqual(convertToUnitSelectionView.label, "Convert to", "The label should be 'Convert to'.")
     }
+    
+    func test_renderedUnitButtonsOnScreenForDistanceOnAppLaunch_numbersSixteenInTotal() {
+        let unitButtons = app.buttons.matching(identifier: "Unit button")
+        XCTAssertEqual(unitButtons.count, 16) // Currently 8 appear on screen on app launch in each VStack, so 16 in total.
+    }
 }
