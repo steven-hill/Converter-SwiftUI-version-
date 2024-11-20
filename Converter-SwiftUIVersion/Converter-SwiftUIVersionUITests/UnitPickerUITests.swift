@@ -9,28 +9,27 @@ import XCTest
 @testable import Converter_SwiftUIVersion
 
 final class UnitPickerUITests: XCTestCase {
+    
+    private var app: XCUIApplication!
+    private var unitTypePicker: XCUIElement!
 
-    override func setUpWithError() throws {
-        continueAfterFailure = true
+    override func setUp() {
+        app = XCUIApplication()
+        app.launch()
+        unitTypePicker = app.segmentedControls["Unit type picker"]
+        continueAfterFailure = false
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
+        app = nil
+        unitTypePicker = nil
     }
 
     func test_unitTypePicker_existsAndIsInitializedCorrectly() {
-        let app = XCUIApplication()
-        app.launch()
-
-        let unitTypePicker = app.segmentedControls["Unit type picker"]
-        
         XCTAssertTrue(unitTypePicker.exists, "Unit type picker should exist.")
     }
     
     func test_unitTypePicker_hasCorrectSegmentLabels() {
-        let app = XCUIApplication()
-        app.launch()
-        
-        let unitTypePicker = app.segmentedControls["Unit type picker"]
         let firstUnitType = unitTypePicker.buttons.element(boundBy: 0)
         let secondUnitType = unitTypePicker.buttons.element(boundBy: 1)
         let thirdUnitType = unitTypePicker.buttons.element(boundBy: 2)
