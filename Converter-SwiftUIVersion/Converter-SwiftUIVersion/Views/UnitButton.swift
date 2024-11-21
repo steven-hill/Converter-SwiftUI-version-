@@ -8,6 +8,7 @@ import SwiftUI
 
 struct UnitButton: View {
     let unit: Dimension
+    var formatUnit: (Dimension) -> String
     
     var body: some View {
         Button(action: {}) {
@@ -17,9 +18,12 @@ struct UnitButton: View {
         }
     }
     
-    private func formatUnit(_ unit: Dimension) -> String {
-        let formatter = MeasurementFormatter()
-        formatter.unitStyle = .long
-        return formatter.string(from: unit)
+    init(unit: Dimension) {
+        self.unit = unit
+        self.formatUnit = { unit in
+            let formatter = MeasurementFormatter()
+            formatter.unitStyle = .long
+            return formatter.string(from: unit)
+        }
     }
 }
