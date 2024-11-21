@@ -29,8 +29,7 @@ final class UnitButtonTests: XCTestCase {
         XCTAssertEqual(sut.formatUnit(UnitTemperature.celsius), "degrees Celsius")
     }
 
-    func test_formatterUsesLongStyle() {
-        sut = UnitButton(unit: UnitLength.centimeters)
+    func test_formatter_usesLongStyle() {
         XCTAssertEqual(sut.formatUnit(UnitLength.centimeters), "centimetres", "In long unit style, the unit should be displayed as 'centimetres'; short and medium unit styles both use 'cm'.")
     }
 }
