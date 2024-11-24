@@ -13,7 +13,7 @@ final class UnitButtonTests: XCTestCase {
     private var sut: UnitButton!
 
     override func setUp() {
-        sut = UnitButton(unit: UnitLength.meters)
+        sut = UnitButton(unit: UnitLength.meters, isSelected: true, action: {})
     }
 
     override func tearDown() {

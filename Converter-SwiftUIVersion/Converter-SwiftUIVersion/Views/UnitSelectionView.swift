@@ -19,8 +19,10 @@ struct UnitSelectionView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(0..<units.count, id: \.self) { index in
-                        UnitButton(unit: units[index])
-                            .accessibilityIdentifier("Unit button")
+                        UnitButton(unit: units[index], isSelected: index == selectedIndex) {
+                            selectedIndex = index
+                        }
+                        .accessibilityIdentifier("Unit button")
                     }
                 }
             }
