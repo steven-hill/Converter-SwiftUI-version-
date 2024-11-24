@@ -8,22 +8,25 @@ import SwiftUI
 
 struct UnitButton: View {
     let unit: Dimension
-    var formatUnit: (Dimension) -> String
+    let isSelected: Bool
+    let action: () -> Void
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: action) {
             HStack {
                 Text(formatUnit(unit))
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark")
+                }
             }
         }
+        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
     
-    init(unit: Dimension) {
-        self.unit = unit
-        self.formatUnit = { unit in
-            let formatter = MeasurementFormatter()
-            formatter.unitStyle = .long
-            return formatter.string(from: unit)
-        }
+    func formatUnit(_ unit: Dimension) -> String {
+        let formatter = MeasurementFormatter()
+        formatter.unitStyle = .long
+        return formatter.string(from: unit)
     }
 }
