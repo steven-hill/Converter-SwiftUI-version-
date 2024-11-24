@@ -25,11 +25,11 @@ final class ConverterConversionsTests: XCTestCase {
     }
     
     func test_conversionsUnitTypes_haveCorrectTitles() {
-        XCTAssertEqual(sut.conversions[0].title, "Distance", "The first conversion should be 'Distance'.")
-        XCTAssertEqual(sut.conversions[1].title, "Duration", "The second conversion should be 'Duration'.")
-        XCTAssertEqual(sut.conversions[2].title, "Mass", "The third conversion should be 'Mass'.")
-        XCTAssertEqual(sut.conversions[3].title, "Temperature", "The fourth conversion should be 'Temperature'.")
-        XCTAssertEqual(sut.conversions[4].title, "Volume", "The fifth conversion should be 'Volume'.")
+        XCTAssertEqual(sut.conversions[0].type.rawValue, "Distance", "The first conversion should be 'Distance'.")
+        XCTAssertEqual(sut.conversions[1].type.rawValue, "Duration", "The second conversion should be 'Duration'.")
+        XCTAssertEqual(sut.conversions[2].type.rawValue, "Mass", "The third conversion should be 'Mass'.")
+        XCTAssertEqual(sut.conversions[3].type.rawValue, "Temperature", "The fourth conversion should be 'Temperature'.")
+        XCTAssertEqual(sut.conversions[4].type.rawValue, "Volume", "The fifth conversion should be 'Volume'.")
     }
     
     func test_conversionsUnitTypes_haveCorrectNumberOfUnits() {

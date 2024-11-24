@@ -13,7 +13,7 @@ struct UnitTypePicker: View {
     var body: some View {
         Picker("Unit type picker", selection: $viewModel.selectedUnitTypeIndex) {
             ForEach(0..<ConverterConversions.init().conversions.count, id: \.self) { index in
-                Text(ConverterConversions.init().conversions[index].title).tag(index)
+                Text(ConverterConversions.init().conversions[index].type.rawValue).tag(index)
             }
         }
         .pickerStyle(.segmented)
