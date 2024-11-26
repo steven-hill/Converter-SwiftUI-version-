@@ -8,7 +8,7 @@
 import XCTest
 @testable import Converter_SwiftUIVersion
 
-final class UnitPickerUITests: XCTestCase {
+final class UnitTypePickerUITests: XCTestCase {
     
     private var app: XCUIApplication!
     private var unitTypePicker: XCUIElement!
@@ -27,6 +27,10 @@ final class UnitPickerUITests: XCTestCase {
 
     func test_unitTypePicker_existsAndIsInitializedCorrectly() {
         XCTAssertTrue(unitTypePicker.exists, "Unit type picker should exist.")
+    }
+    
+    func test_unitTypePicker_canBeInteractedWith() {
+        XCTAssertTrue(unitTypePicker.isHittable, "Unit type picker should be interactable.")
     }
     
     func test_unitTypePicker_hasCorrectSegmentLabels() {
