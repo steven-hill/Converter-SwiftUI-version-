@@ -23,6 +23,8 @@ struct ContentView: View {
                         UnitSelectionView(title: "Convert to", selectedIndex: $viewModel.selectedToUnitIndex, units: viewModel.currentUnits)
                             .accessibilityIdentifier("Convert to unit selection view")
                     }
+                    .padding(.bottom)
+                    InputView(inputAmount: $viewModel.inputAmount)
                 }
             }
         }
