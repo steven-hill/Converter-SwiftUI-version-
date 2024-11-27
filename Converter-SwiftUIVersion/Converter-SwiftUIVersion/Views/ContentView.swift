@@ -24,7 +24,7 @@ struct ContentView: View {
                             .accessibilityIdentifier("Convert to unit selection view")
                     }
                     .padding(.bottom)
-                    InputView(inputAmount: $viewModel.inputAmount)
+                    InputView(inputAmount: $viewModel.inputAmount, convertInput: viewModel.updateResult)
                 }
             }
         }
