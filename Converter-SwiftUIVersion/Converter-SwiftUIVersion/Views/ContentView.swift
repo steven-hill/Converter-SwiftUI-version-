@@ -25,7 +25,9 @@ struct ContentView: View {
                     }
                     .padding(.bottom)
                     InputView(inputAmount: $viewModel.inputAmount, convertInput: viewModel.updateResult)
+                    ResultView(result: viewModel.result)
                 }
+                .padding()
             }
         }
     }
