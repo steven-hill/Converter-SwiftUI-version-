@@ -6,4 +6,4 @@
 - This app can convert distance, duration, mass, temperature or volume units. 
 - It's written in Swift for tvOS 18.0 on Xcode 16.0.
 - The UI framework used is SwiftUI. The testing framework is XCTest for the unit tests and UI tests.
-- For this app I'm utilising the TDD approach.
+- For this app I utilised the TDD approach.
