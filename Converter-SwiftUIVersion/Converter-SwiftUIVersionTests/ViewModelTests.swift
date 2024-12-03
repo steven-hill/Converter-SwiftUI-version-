@@ -10,7 +10,7 @@ import XCTest
 
 final class ViewModelTests: XCTestCase {
 
-    var sut: ViewModel!
+    private var sut: ViewModel!
     
     override func setUp() {
         sut = ViewModel()
@@ -40,6 +40,16 @@ final class ViewModelTests: XCTestCase {
         sut.selectedFromUnitIndex = 2
         sut.selectedToUnitIndex = 2
         
+        sut.resetUnitSelection()
+        
+        XCTAssertEqual(sut.selectedFromUnitIndex, 0, "Should be reset to 0.")
+        XCTAssertEqual(sut.selectedToUnitIndex, 1, "Should be reset to 1.")
+    }
+    
+    func test_unitSelectionResetFunction_resetsUnitIndexesToInitialValuesAfterUnitTypeIndexChanges() {
+        sut.selectedFromUnitIndex = 3
+        sut.selectedToUnitIndex = 2
+        sut.selectedUnitTypeIndex = 1
         sut.resetUnitSelection()
         
         XCTAssertEqual(sut.selectedFromUnitIndex, 0, "Should be reset to 0.")
