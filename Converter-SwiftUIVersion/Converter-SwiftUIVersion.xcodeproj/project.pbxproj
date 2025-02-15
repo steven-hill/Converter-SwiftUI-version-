@@ -52,6 +52,7 @@
 			membershipExceptions = (
 				Conversions.swift,
 				ViewModel.swift,
+				Views/BackgroundView.swift,
 			);
 			target = 5BED29D52D5EA3AB001724F7 /* Converter_iOSApp */;
 		};
